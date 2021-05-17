@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Annoying Testing!</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script>
+      function greet()
+      {
+        let name = document.querySelector('#name').value;
+        if (name === '')
+          alert('Idiot, type your name & then click!')    
+        else
+          alert('Hello, '+ name +'!');
+
+      }
+    </script>
+
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body>
+    <header>
+      <h1>This is the all-in-all annoying testing space.</h1> 
+    </header>
+    <P></P>
+    <p>Table show-off time!:</p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Hobby</th>
+        <th>Music type</th>
+      </tr>
+      <tr>
+        <td>Sharan</td>
+        <td>Watching Movies</td>
+        <td>Rock</td>
+      </tr>
+    </table>
+
+    <p>=======================</p>
+
+    <form action="https://www.google.com/search" method="get">
+      <input name="q" placeholder="Google search" type="search">
+      <input type="submit" value="Search">
+    </form>
+
+    <p>=======================</p>
+    <p>This is a JavaScript method:</p>
+
+    <form onsubmit="greet(); return false;">
+      <input autocomplete="off" id='name' placeholder="The Annoying Greet!" type='text'>
+      <input type="submit" value="Greet!">
+    </form>
+
+    <main>
+      Just testing the main section.
+    </main>
+    <footer>
+      Copyright &#169 Sharan 2021
+    </footer>
+  </body>
+</html>

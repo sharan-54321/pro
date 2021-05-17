@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+header, main, footer{
+  font-size: small; text-align: center;
+}
+
+form, p, script
+{
+  font-family: 'Montserrat', sans-serif;
+  padding: 4.5px;
+  padding-left: 20px;
+}
+h1, main, footer
+{
+  font-family: 'Fredoka One', cursive;
+}
+body
+{
+  background-color:whitesmoke;
+}
+h1
+{
+  margin-top: 5px;
+  border: 5px solid rgb(114, 196, 250);
+}
+table{
+  margin-left: 20px; 
+  border: 5px dashed black; 
+}
+
+th, td{
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px;
+  text-align: center;
+  height: 50px;
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+th
+{
+  background-color: lightsalmon;
+}
