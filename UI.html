@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .parent {
+        padding-top: 1rem;
+        position: relative;
+        background-color: lightcoral;
+        height: 200vh;
+        border-radius: 0.4rem;
+      }
+      #child1 {
+        position: sticky;
+        border-radius: 0.4rem;
+        padding: 1rem;
+        margin-top: 0;
+        background-color: black;
+        color: white;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        color: white;
+        padding: 0.5rem;
+      }
+
+      #bottom-bts {
+        border-radius: 0.4rem;
+        padding: 1rem;
+        background-color: black;
+        color: white;
+
+        position: sticky;
+        bottom: 0;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      button {
+        border: none;
+        background: none;
+        color: white;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("click", (event) => {
+          const element = event.target;
+
+          if (element.id == "menu") {
+            console.log("clicked menu");
+          }
+
+          if (element.id == "share") {
+            console.log("clicked Share");
+          }
+        });
+      });
+    </script>
+    <title>Sticky</title>
+  </head>
+  <body>
+    <div class="parent">
+      <h1>Sticky CSS!</h1>
+      <div id="child1">
+        <button id="menu">Menu</button>
+        <button id="share">Share</button>
+      </div>
+      <h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis maiores
+        molestiae aut porro voluptatum quibusdam minima repellat, incidunt
+        possimus perspiciatis delectus ab sunt unde, libero nulla repellendus
+        labore, distinctio assumenda.
+      </h2>
+    </div>
+    <div id="bottom-bts">
+      <button>Bottom Toolbar</button>
+    </div>
+  </body>
+</html>
