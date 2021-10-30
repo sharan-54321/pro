@@ -13,10 +13,10 @@
         padding: 0;
       }
       .vax-card {
-        border: 2px solid lightskyblue;
+        background: rgba(0, 151, 19, 0.3);
         border-radius: 20px;
         padding: 15px;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
         max-width: max-content;
         margin-left: 10px;
       }
@@ -25,13 +25,14 @@
         font-weight: bold;
       }
       p {
-        display: inline-block;
+        display: inline;
       }
       .new_line {
         display: block;
+        margin-bottom: 10px;
       }
-      .coral {
-        color: coral;
+      .green {
+        color: #52c735;
       }
     </style>
     <script>
@@ -51,14 +52,14 @@
             console.log(sessions.length);
             let nearby_loc = document.createElement("h2");
             var loc = `
-                      <h2>Nearby Locations: <span class='coral'>${sessions.length}</span></h2>
+                      <h2>Nearby Locations: <span class='green'>${sessions.length}</span></h2>
             `;
             nearby_loc.innerHTML = loc;
             document.querySelector("body").appendChild(nearby_loc);
 
             for (var i = 0; i < sessions.length; i++) {
-              let newElement = document.createElement("div");
-              newElement.classList.add("vax-card");
+              let newCard = document.createElement("div");
+              newCard.classList.add("vax-card");
               var row = `   
                             <div class="new_line"><h4>Name: </h4><p>${sessions[i].name}</p></div>
                             <div class="new_line"><h4>Vaccine: </h4><p>${sessions[i].vaccine}</p></div>
@@ -67,8 +68,8 @@
                             <div class="new_line"><h4>Available Capacity: </h4><p>${sessions[i].available_capacity}</p></div>
                 
                           `;
-              newElement.innerHTML += row;
-              document.querySelector("body").appendChild(newElement);
+              newCard.innerHTML += row;
+              document.querySelector("body").appendChild(newCard);
             }
           });
       });
