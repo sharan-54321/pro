@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .vax-card {
+        border: 2px solid lightskyblue;
+        border-radius: 20px;
+        padding: 15px;
+        margin-bottom: 5px;
+        max-width: max-content;
+        margin-left: 10px;
+      }
+      h4 {
+        display: inline;
+        font-weight: bold;
+      }
+      p {
+        display: inline-block;
+      }
+      .new_line {
+        display: block;
+      }
+      .coral {
+        color: coral;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var vaxCard = document.getElementById("vax-card");
+
+        fetch(
+          "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=540&date=30-10-2021"
+        )
+          // Put response into json form
+          .then((response) => response.json())
+          .then((data) => {
+            // Log data to the console
+
+            var sessions = data.sessions;
+
+            console.log(sessions.length);
+            let nearby_loc = document.createElement("h2");
+            var loc = `
+                      <h2>Nearby Locations: <span class='coral'>${sessions.length}</span></h2>
+            `;
+            nearby_loc.innerHTML = loc;
+            document.querySelector("body").appendChild(nearby_loc);
+
+            for (var i = 0; i < sessions.length; i++) {
+              let newElement = document.createElement("div");
+              newElement.classList.add("vax-card");
+              var row = `   
+                            <div class="new_line"><h4>Name: </h4><p>${sessions[i].name}</p></div>
+                            <div class="new_line"><h4>Vaccine: </h4><p>${sessions[i].vaccine}</p></div>
+                            <div class="new_line"><h4>Fee Type: </h4><p>${sessions[i].fee_type}</p></div>
+                            <div class="new_line"><h4>Fee: </h4><p>RS.${sessions[i].fee}</p></div>
+                            <div class="new_line"><h4>Available Capacity: </h4><p>${sessions[i].available_capacity}</p></div>
+                
+                          `;
+              newElement.innerHTML += row;
+              document.querySelector("body").appendChild(newElement);
+            }
+          });
+      });
+    </script>
+
+    <title>Somethin' amazin'</title>
+  </head>
+  <body>
+    <h1>JSON to HTML</h1>
+  </body>
+</html>
