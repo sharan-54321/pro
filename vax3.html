@@ -135,9 +135,13 @@
           document.querySelector(".cards-block").innerHTML = "";
 
           var date = document.getElementById("datepicker").value;
+
           var district_id = document.getElementById("district").value;
           // console.log(date);
           // console.log(district);
+          if (district_id == "NONE") {
+            alert("Select a District");
+          }
 
           var vaxCard = document.getElementById("vax-card");
 
@@ -239,7 +243,7 @@
         readonly
       />
       <button id="search_button">Search Vaccine</button>
-      <div class="cards-block"></div>
     </div>
+    <div class="cards-block"></div>
   </body>
 </html>
