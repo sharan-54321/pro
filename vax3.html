@@ -16,6 +16,7 @@
       button,
       select {
         font-family: "Poppins", sans-serif;
+        margin-bottom: 5px;
       }
       #district {
         display: none;
@@ -35,6 +36,7 @@
         margin-bottom: 15px;
         max-width: fit-content;
         margin-left: 10px;
+        margin-right: 10px;
       }
       h4 {
         display: inline;
@@ -218,22 +220,24 @@
   </head>
   <body>
     <h1>Vaccine Search</h1>
-    <select name="state" id="state" required>
-      <option value="NONE" disabled selected>Select State</option>
-    </select>
-    <select name="district" id="district" required>
-      <option value="NONE" disabled selected>Select District</option>
-    </select>
+    <div class="options-block">
+      <select name="state" id="state" required>
+        <option value="NONE" disabled selected>Select State</option>
+      </select>
+      <select name="district" id="district" required>
+        <option value="NONE" disabled selected>Select District</option>
+      </select>
 
-    <input
-      type="text"
-      id="datepicker"
-      size="10"
-      placeholder="Select Date"
-      required
-      readonly
-    />
-    <button id="search_button">Search Vaccine</button>
-    <div class="cards-block"></div>
+      <input
+        type="text"
+        id="datepicker"
+        size="10"
+        placeholder="Select Date"
+        required
+        readonly
+      />
+      <button id="search_button">Search Vaccine</button>
+      <div class="cards-block"></div>
+    </div>
   </body>
 </html>
