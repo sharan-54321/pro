@@ -74,9 +74,11 @@
 
         //Getting states using dynamic id
         document.getElementById("state").onchange = function () {
+          // Clear district option
+          document.getElementById("district").options.length = 1;
+
           var value = document.getElementById("state").value;
           console.log(value);
-          document.getElementById("district").options.length = 1;
 
           document.getElementById("district").style.display = "block";
 
