@@ -73,7 +73,10 @@
         document.getElementById("state").onchange = function () {
           var value = document.getElementById("state").value;
           console.log(value);
+          document.getElementById("district").options.length = 1;
+
           document.getElementById("district").style.display = "block";
+
           var url =
             "https://cdn-api.co-vin.in/api/v2/admin/location/districts/" +
             value;
@@ -83,7 +86,6 @@
             .then((data) => {
               var districts = data.districts;
               console.log(districts);
-
               for (var i = 0; i < districts.length; i++) {
                 district.innerHTML += `<option value="${districts[i].district_id}">${districts[i].district_name}</option>`;
               }
