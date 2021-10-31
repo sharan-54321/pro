@@ -167,8 +167,18 @@
                 newCard.classList.add("vax-card");
                 var row = `   
                     <div class="new_line">
-                      <h4>Name: </h4><p>${sessions[i].name}</p>
+                      <h4>Centre: </h4><p>${sessions[i].name}</p>
                     </div>
+
+                    <div class="new_line">
+                      <h4>Address: </h4><p>${sessions[i].address}</p>
+                    </div>
+                    
+                    <div class="new_line">
+                      <h4>District: </h4><p>${sessions[i].district_name}, ${sessions[i].pincode}</p>
+                    </div>
+
+                   
 
                     <div class="new_line">
                       <h4>Vaccine: </h4><p>${sessions[i].vaccine}</p>
@@ -185,6 +195,15 @@
                     <div class="new_line">
                       <h4>Available Capacity: </h4><p>${sessions[i].available_capacity}</p>
                     </div>
+
+                    <div class="new_line">
+                      <h4>Available Dose 1: </h4><p>${sessions[i].available_capacity_dose1}</p>
+                    </div>
+
+                    <div class="new_line">
+                      <h4>Available Dose 2: </h4><p>${sessions[i].available_capacity_dose2}</p>
+                    </div>
+                    
         
                   `;
                 newCard.innerHTML = row;
