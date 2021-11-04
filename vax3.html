@@ -27,11 +27,6 @@
       select {
         width: 200px;
       }
-      #datepicker {
-        display: block;
-
-        caret-color: transparent;
-      }
 
       .vax-card {
         background: rgba(0, 151, 19, 0.3);
@@ -59,6 +54,17 @@
       button {
         display: none;
       }
+
+      /* Calendar css */
+      td,
+      th {
+        padding: 4px;
+      }
+      #datepicker {
+        display: block;
+        caret-color: transparent;
+      }
+
       .ui-state-default {
         color: black;
         text-decoration-line: none;
@@ -68,6 +74,9 @@
         background-color: #d4d4d4;
         font-family: "Poppins", sans-serif;
         border-radius: 7px;
+      }
+      .ui-datepicker-calendar {
+        padding: 3px;
       }
       .ui-widget-header {
         background-color: #eeeeee;
