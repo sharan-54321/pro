@@ -28,7 +28,8 @@
         width: 200px;
       }
       #datepicker {
-        display: none;
+        display: block;
+
         caret-color: transparent;
       }
 
@@ -58,11 +59,55 @@
       button {
         display: none;
       }
+      .ui-state-default {
+        color: black;
+        text-decoration-line: none;
+        padding: 5px;
+      }
+      #ui-datepicker-div {
+        padding: 3px;
+        background-color: #d4d4d4;
+        font-family: "Poppins", sans-serif;
+        border-radius: 7px;
+      }
+      .ui-widget-header {
+        background-color: #eeeeee;
+        border-radius: 6px;
+        display: flex;
+        direction: horizontal;
+        align-content: center;
+        justify-content: space-around;
+        padding: 4px;
+      }
+      .ui-datepicker-today {
+        background-color: white;
+        border-radius: 7px;
+      }
+      .ui-datepicker-title {
+        /* background-color: aqua; */
+        padding-left: 3px;
+        padding-right: 3px;
+        border-radius: 4px;
+      }
+      .ui-datepicker-next {
+        margin-right: 0;
+        order: 1;
+        color: transparent;
+        background-image: url("https://uploads-ssl.webflow.com/6181638c04f8b017504fb98f/61837b585c293959c9095082_arrow_forward_ios_24px.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .ui-datepicker-prev {
+        color: transparent;
+        background-image: url("https://uploads-ssl.webflow.com/6181638c04f8b017504fb98f/61837cbcdb060a1c08dbbb53_arrow_forward_ios_24px.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
     </style>
     <script>
       // Getting states for select tag
       document.addEventListener("DOMContentLoaded", function () {
-        var state = document.getElementById("state");
+        var state0 = document.getElementById("state");
 
         fetch("https://cdn-api.co-vin.in/api/v2/admin/location/states")
           .then((response) => response.json())
@@ -70,7 +115,7 @@
             var states = data.states;
 
             for (var i = 0; i < states.length; i++) {
-              state.innerHTML += `<option value="${states[i].state_id}">${states[i].state_name}</option>`;
+              state0.innerHTML += `<option value="${states[i].state_id}">${states[i].state_name}</option>`;
             }
           });
 
@@ -90,8 +135,9 @@
             .then((response) => response.json())
             .then((data) => {
               var districts = data.districts;
+              var district0 = document.getElementById("district");
               for (var i = 0; i < districts.length; i++) {
-                district.innerHTML += `<option value="${districts[i].district_id}">${districts[i].district_name}</option>`;
+                district0.innerHTML += `<option value="${districts[i].district_id}">${districts[i].district_name}</option>`;
               }
             });
         };
@@ -105,10 +151,6 @@
     <!-- jQuery tags -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
-    />
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <!-- Date format Script -->
